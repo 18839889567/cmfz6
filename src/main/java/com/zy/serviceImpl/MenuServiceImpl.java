@@ -1,7 +1,8 @@
-package com.zy.service;
+package com.zy.serviceImpl;
 
 import com.zy.entity.Menu;
 import com.zy.mapper.MenuMapper;
+import com.zy.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

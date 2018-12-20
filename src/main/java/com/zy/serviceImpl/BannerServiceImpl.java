@@ -1,8 +1,9 @@
-package com.zy.service;
+package com.zy.serviceImpl;
 
 import com.zy.entity.Banner;
 import com.zy.entity.BannerDto;
 import com.zy.mapper.BannerMapper;
+import com.zy.service.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,8 @@
-package com.zy.service;
+package com.zy.serviceImpl;
 
 import com.zy.entity.Admin;
 import com.zy.mapper.AdminMapper;
+import com.zy.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

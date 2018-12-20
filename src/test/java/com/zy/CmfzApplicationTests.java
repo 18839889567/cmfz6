@@ -2,9 +2,11 @@ package com.zy;
 
 import com.zy.entity.BannerDto;
 import com.zy.entity.Menu;
+import com.zy.entity.User;
 import com.zy.service.AdminService;
 import com.zy.service.BannerService;
 import com.zy.service.MenuService;
+import com.zy.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,23 @@ public class CmfzApplicationTests {
     MenuService menuService;
     @Autowired
     BannerService bannerService;
+    @Autowired
+    UserService userService;
 
     @Test
-    public void contextLoads() {
-        // System.out.println(adminService.queryByName(new Admin(null,"123456","123456")));
+    public void UserTest() {
+        User user = new User();
+        long l = 1;
+        user.setId(l);
 
+        System.out.println(userService.queryOne(user));
+
+
+//        List<User> list = userService.queryAll();
+//        for (User user : list) {
+//            System.out.println(user);
+//
+//        }
     }
 
     @Test
