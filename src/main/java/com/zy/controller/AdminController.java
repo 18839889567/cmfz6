@@ -16,6 +16,7 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
+
     @RequestMapping("login")
     public String login(Admin admin, String code, HttpSession session) {
 
