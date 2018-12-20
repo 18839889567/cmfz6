@@ -1,7 +1,9 @@
 package com.zy;
 
+import com.zy.entity.BannerDto;
 import com.zy.entity.Menu;
 import com.zy.service.AdminService;
+import com.zy.service.BannerService;
 import com.zy.service.MenuService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +21,8 @@ public class CmfzApplicationTests {
 
     @Autowired
     MenuService menuService;
+    @Autowired
+    BannerService bannerService;
 
     @Test
     public void contextLoads() {
@@ -41,6 +45,19 @@ public class CmfzApplicationTests {
         for (Menu menu : list) {
             System.out.println(menu);
         }
+
+    }
+
+    @Test
+    public void Banner() {
+
+
+    }
+
+    @Test
+    public void BannerSelectA() {
+        BannerDto dto = bannerService.selectByPage(1, 5);
+        System.out.println(dto);
 
     }
 }

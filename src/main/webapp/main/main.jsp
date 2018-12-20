@@ -4,15 +4,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>持名法州主页</title>
+    <link rel="stylesheet" type="text/css" href="../themes/icon.css">
     <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="../themes/IconExtension.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/datagrid-detailview.js"></script>
+    <script type="text/javascript" src="../js/jquery.edatagrid.js"></script>
     <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         <!--菜单处理-->
         function title(list) {
-            console.log(list)
+
             if (list.length != 0) {
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -24,7 +27,6 @@
                 return "<a href=''>空空如也</a>"
             }
         }
-
         function addTabs(title, iconCls, url) {
             var a = $("#tt").tabs("exists", title)
             if (a) {
@@ -46,9 +48,7 @@
             $.post(
                 "${pageContext.request.contextPath}/menu/queryAll",
                 function (result) {
-                    console.log(result)
-                    // console.log(result.length)
-                    //console.log(result[0].list.length)
+
                     for (var i = 0; i < result.length; i++) {
                         // console.log("result[i].id="+result[i].id+"   result[i].title"+result[i].title)
                         $("#menu").accordion('add', {
