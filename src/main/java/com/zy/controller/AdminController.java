@@ -18,8 +18,8 @@ public class AdminController {
 
     @RequestMapping("login")
     public String login(Admin admin, String code, HttpSession session) {
-        System.out.println("111111111111111111");
-        System.out.println(admin);
+
+
         return adminService.queryByName(admin, code, session);
     }
 
