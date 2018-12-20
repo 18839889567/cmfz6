@@ -19,8 +19,6 @@ public class AdminController {
 
     @RequestMapping("login")
     public String login(Admin admin, String code, HttpSession session) {
-
-
         return adminService.queryByName(admin, code, session);
     }
 
