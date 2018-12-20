@@ -17,12 +17,29 @@
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
                     console.log(list[i].title)
-                    str = str + "<a class='l-btn'  >" + list[i].title + "</a><br>";
+                    str += "<p style='text-align: center'><a id=\"btn\" href=\"#\" class=\"easyui-linkbutton\" onclick=\"addTabs('" + list[i].title + "','" + list[i].iconCls + "','" + list[i].url + "')\" data-options=\"iconCls:'icon-search'\">" + list[i].title + "</a></p>";
                 }
                 return str;
             } else {
                 return "<a href=''>空空如也</a>"
             }
+        }
+
+        function addTabs(title, iconCls, url) {
+            var a = $("#tt").tabs("exists", title)
+            if (a) {
+                $("#tt").tabs("select", title)
+            } else {
+                $('#tt').tabs('add', {
+                    title: title,
+                    iconCls: "icon-save",
+                    href: "${pageContext.request.contextPath}/" + url,
+                    selected: true,
+                    closable: true
+
+                });
+            }
+
         }
 
         $(function () {
@@ -35,6 +52,7 @@
                     for (var i = 0; i < result.length; i++) {
                         // console.log("result[i].id="+result[i].id+"   result[i].title"+result[i].title)
                         $("#menu").accordion('add', {
+                            iconCls: result[i].iconcls,
                             title: result[i].title,
                             content: title(result[i].list),
                             selected: false
@@ -72,8 +90,9 @@
 </div>
 <div data-options="region:'center'">
     <div id="tt" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
-        <div title="主页" data-options="iconCls:'icon-neighbourhood',"
-             style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>
+        <%--<div title="主页" data-options="iconCls:'icon-neighbourhood',"--%>
+        <%--style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>--%>
+        <div data-options="region:'center',href:'${pageContext.request.contextPath}/main/tabs.jsp'"></div>
     </div>
 </div>
 </body>

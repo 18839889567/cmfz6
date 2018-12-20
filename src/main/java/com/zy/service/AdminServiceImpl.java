@@ -17,7 +17,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public String queryByName(Admin admin, String code, HttpSession session) {
         String code1 = (String) session.getAttribute("code");
-        if (!code1.equals(code)) {
+        if (!code1.equalsIgnoreCase(code)) {
             return "验证码错误";
         } else {
             Admin admin1 = adminMapper.selectOne(admin);
