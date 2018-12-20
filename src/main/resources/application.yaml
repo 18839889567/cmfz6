@@ -1,0 +1,26 @@
+server:
+  port: 8989
+  context-path: /cmfz
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/cmfz?characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  type-aliases-package: com.zy.entity
+  mapper-locations: classpath:com.zy.mapper/*Mapper.xml      #当自己写mapper的时候需要用
+
