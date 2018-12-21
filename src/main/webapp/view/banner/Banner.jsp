@@ -59,6 +59,7 @@
                         "id=" + row.id,
                         function (result) {
                             $('#edatagrid').edatagrid('destroyRow');
+
                         }
                     )
 

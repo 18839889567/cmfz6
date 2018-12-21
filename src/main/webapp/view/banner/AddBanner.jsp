@@ -43,5 +43,5 @@
     <input id="addBannerFormDescription" name="description"><br>
     图片： <input type="file" name="file"/>
     <a id="addBannerFormBtn" value="提交"/>
-    <input type="button" value="返回上级" onclick="history.go(-1);"/>
+
 </form>
