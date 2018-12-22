@@ -19,8 +19,9 @@ public class ChapterController {
     ChapterService chapterService;
 
     @RequestMapping("insert")
-    public void insert(Chapter chapter, HttpSession session, MultipartFile file) throws IOException {
+    public String insert(Chapter chapter, HttpSession session, MultipartFile file) throws IOException {
         chapterService.insert(chapter, session, file);
+        return "ok";
     }
 
     @RequestMapping("download")

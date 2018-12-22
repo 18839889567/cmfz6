@@ -67,7 +67,7 @@
     function show(value, row, index) {
         console.log(value)
         if (value != undefined) {
-            return "<audio class='audio1' src='${pageContext.request.contextPath}" + value + "' controls=\"controls\">\n" +
+            return "<audio class='audio1' src='${pageContext.request.contextPath}/img/chapter/" + value + "' controls=\"controls\">\n" +
                 "</audio>";
         } else {
             return "";
@@ -93,7 +93,6 @@
             pageSize: 3,
             pageList: [1, 3, 5, 6]
         });
-
 
         $("#showAlbumDialog").dialog({
             title: '专辑详情',
