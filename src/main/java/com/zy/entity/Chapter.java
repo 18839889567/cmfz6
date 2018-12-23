@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Chapter implements Serializable {
     @Id
-    private Long id;
+    private String id;
     private String title;
     private Double size;
     private String duration;

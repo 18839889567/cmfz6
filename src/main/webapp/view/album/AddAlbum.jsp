@@ -8,8 +8,8 @@
                 $("#showAlbumForm").form("submit", {
                     url: "${pageContext.request.contextPath}/album/insert",
                     onSubmit: function () {
-
-                    }, onSuccess: function () {
+                        $("#showAlbumForm").form("validate");
+                    }, success: function () {
                         $.messager.show({
                             title: "系统提示",
                             msg: "添加成功"

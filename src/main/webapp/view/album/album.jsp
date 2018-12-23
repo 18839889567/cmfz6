@@ -1,4 +1,8 @@
 <%@page pageEncoding="UTF-8" %>
+<script type="text/css">
+
+
+</script>
 <script type="text/javascript">
     var albumId;
     var toolbar = [{
@@ -32,7 +36,6 @@
         iconCls: 'icon-remove',
         handler: function () {
             var row = $("#album").treegrid("getSelected");
-            console.log(row)
             if (row.children != null) {
                 albumId = row.id;
                 $("#AddChapterDialog").dialog("open");
@@ -49,12 +52,8 @@
         iconCls: 'icon-save',
         handler: function () {
             var row = $("#album").treegrid("getSelected");
-            console.log(row)
             if (row.children == null) {
-                $.post("${pageContext.request.contextPath}/chapter/download",
-                    "url=" + row.url
-                )
-
+                location.href = "${pageContext.request.contextPath}/chapter/download?url=" + row.url;
             } else {
                 $.messager.alert({
                     msg: '请先选中音频'
@@ -65,7 +64,6 @@
     }];
 
     function show(value, row, index) {
-        console.log(value)
         if (value != undefined) {
             return "<audio class='audio1' src='${pageContext.request.contextPath}/img/chapter/" + value + "' controls=\"controls\">\n" +
                 "</audio>";
@@ -75,7 +73,10 @@
 
     }
 
+
     $(function () {
+
+
         $('#album').treegrid({
             url: '${pageContext.request.contextPath}/album/queryAll',
             idField: 'id',
