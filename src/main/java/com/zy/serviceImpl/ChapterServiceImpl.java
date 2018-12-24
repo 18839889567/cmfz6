@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Date;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -41,9 +42,10 @@ public class ChapterServiceImpl implements ChapterService {
 //            file.getOriginalFilename();
 //        }
 
-        chapter.setId(randomSaltUtil.getCode());
+        chapter.setId(UUID.randomUUID().toString());
         File file1 = new File(realPath + "/" + filename);
         file.transferTo(file1);
+
         chapter.setUploadDate(new Date());
         chapter.setUrl("" + filename);
         int size = (int) (file.getSize() / 1024.0 / 1024.0 * 100);

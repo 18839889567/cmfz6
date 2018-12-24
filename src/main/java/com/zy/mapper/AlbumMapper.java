@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface AlbumMapper extends Mapper<Album> {
     public List<Album> queryAll(@Param("page") int Page, @Param("pageSize") int pageSize);
+
+    public List<Album> all();
+
 }

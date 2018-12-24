@@ -46,6 +46,31 @@
 
 
     </select>
+    <select id="all" resultMap="r1">
+        select b.*,
+               c.id          cid,
+               c.title       ctitle,
+               c.size,
+               c.duration,
+               c.url,
+               c.upload_date uploadDate,
+               c.a_id
+        from (select a.id,
+                     a.title,
+                     a.count,
+                     a.cover_img coverImg,
+                     a.score,
+                     a.author,
+                     a.broadcast,
+                     a.brief,
+                     a.pub_date  pubDate
+              from album a
+              order by a.id desc) b
+                 LEFT JOIN chapter c
+                           on b.id = c.a_id
+
+
+    </select>
 
 
 </mapper>
