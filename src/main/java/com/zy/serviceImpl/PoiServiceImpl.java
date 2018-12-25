@@ -42,8 +42,8 @@ public class PoiServiceImpl implements PoiService {
     @Override
     public void poiImport() {
         ImportParams params = new ImportParams();
-        params.setTitleRows(1);
-        params.setHeadRows(2);
+        params.setTitleRows(1);   //表格标题行数
+        params.setHeadRows(2);   //表头行数
         List<Album> list = ExcelImportUtil.importExcel(new File("D:/easypoi.xls"), Album.class, params);
 
 
