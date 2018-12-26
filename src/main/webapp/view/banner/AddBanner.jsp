@@ -9,7 +9,7 @@
                     url: "${pageContext.request.contextPath}/banner/insert",
                     onSubmit: function () {
 
-                    }, onSuccess: function () {
+                    }, success: function () {
                         $.messager.show({
                             title: "系统提示",
                             msg: "添加成功"

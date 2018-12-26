@@ -13,11 +13,21 @@ public class PoiController {
 
     @RequestMapping("download")
     public void download() {
-        poiService.download();
+        poiService.downloadAlbum();
     }
 
     @RequestMapping("poiImport")
     public void poiImport() {
-        poiService.poiImport();
+        poiService.poiImportAlbum();
+    }
+
+    @RequestMapping("downloadUser")
+    public void downloadUser() {
+        poiService.downloadUser();
+    }
+
+    @RequestMapping("poiImportUser")
+    public void poiImportUser() {
+        poiService.poiImportUser();
     }
 }

@@ -21,7 +21,7 @@
             if (list.length != 0) {
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
-                    console.log(list[i].title)
+                    //console.log(list[i].title)
                     str += "<p style='text-align: center'><a id=\"btn\" href=\"#\" class=\"easyui-linkbutton\" onclick=\"addTabs('" + list[i].title + "','" + list[i].iconCls + "','" + list[i].url + "')\" data-options=\"iconCls:'icon-search'\">" + list[i].title + "</a></p>";
                 }
                 return str;

@@ -1,6 +1,8 @@
 package com.zy.controller;
 
 import com.zy.entity.Province;
+import com.zy.entity.User;
+import com.zy.entity.UserDto;
 import com.zy.mapper.UserMapper;
 import com.zy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,22 @@ public class UserController {
 
         return userService.queryByDate();
     }
+
+    @RequestMapping("queryByPage")
+    public UserDto queryByPage(Integer page, Integer rows) {
+        return userService.queryByPage(page, rows);
+    }
+
+    @RequestMapping("update")
+    public void update(User user) {
+        userService.update(user);
+    }
+
+    @RequestMapping("delete")
+    public void delete(User user) {
+        userService.delete(user);
+    }
+
 
     @RequestMapping("province")
     public Map<String, List<Province>> queryProvince() {

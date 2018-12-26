@@ -4,6 +4,7 @@
         $("#edatagrid").edatagrid({
             updateUrl: "${pageContext.request.contextPath}/banner/update",
             url: '${pageContext.request.contextPath}/banner/queryByPage',
+            destroyUrl: '${pageContext.request.contextPath}/banner/delete',
             columns: [[
                 {field: 'id', title: 'ID', width: 100},
                 {field: 'title', title: '名称', width: 100},
